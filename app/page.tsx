@@ -1,9 +1,20 @@
+
+"use client";
 import PaymentMethods from "./components/PaymentMethods";
 import CardFields from "./components/CardFields";
 import PayCTA from "./components/PayCTA";
 import OrderSummary from "./components/OrderSummary";
+import { useState } from "react";
+import BankFields from "./components/BankFields";
+import TransferInfo from "./components/TransferInfo";
+
 
 export default function Page() {
+  const [paymentMethod, setPaymentMethod] = useState<
+    "card" | "bank" | "transfer"
+  >("card");
+
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-white">
       {/* Page container */}
@@ -32,9 +43,15 @@ export default function Page() {
             <div className="flex flex-col gap-[36px]">
               <div className="w-full max-w-[476px] h-px bg-[#D9D9D9] my-[8px]" />
 
-              <PaymentMethods />
+              <PaymentMethods
+                paymentMethod={paymentMethod}
+                setPaymentMethod={setPaymentMethod}
+              />
 
-              <CardFields />
+              {paymentMethod === "card" && <CardFields />}
+              {paymentMethod === "bank" && <BankFields />}
+              {paymentMethod === "transfer" && <TransferInfo />}
+
 
               <PayCTA />
             </div>
