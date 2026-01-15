@@ -9,7 +9,7 @@ export default function Page() {
           <div
             className="
       relative
-      lg: absolute
+      lg:absolute
       lg:left-[130px]
       lg:top-[75px]
       w-full
