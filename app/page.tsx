@@ -6,27 +6,30 @@ export default function HomePage() {
   const checkouts = [
     {
       id: "01",
-      title: "Payment Form with Sidebar",
-      description: "Split layout with payment methods and order summary",
-      route: "/checkout-01",
+      title: "Checkout",
+      description: "Payment form with multiple payment methods and order summary",
+      route: "/checkout",
       status: "live",
       tags: ["Payment", "Split Layout", "Responsive"],
+      screenshot: "/checkout.svg",
     },
     {
       id: "02",
-      title: "Checkout Design 02",
-      description: "Coming soon...",
-      route: "/checkout-02",
-      status: "coming-soon",
-      tags: ["E-commerce", "Modern UI"],
+      title: "Auth",
+      description: "Authentication pages including login, signup, and forgot password",
+      route: "/auth/login",
+      status: "live",
+      screenshot: "/login.svg",
+
+      tags: ["Authentication", "Forms", "Security"],
     },
     {
       id: "03",
-      title: "Checkout Design 03",
+      title: "Dashboard",
       description: "Coming soon...",
-      route: "/checkout-03",
+      route: "/dashboard",
       status: "coming-soon",
-      tags: ["Minimal", "Clean"],
+      tags: ["Analytics", "Admin", "Data Visualization"],
     },
   ];
 
@@ -50,42 +53,52 @@ export default function HomePage() {
               key={checkout.id}
               href={checkout.route}
               className={`block bg-white rounded-lg border-2 border-gray-200 overflow-hidden transition-all ${checkout.status === "live"
-                  ? "hover:border-blue-500 hover:shadow-lg cursor-pointer"
-                  : "opacity-60 cursor-not-allowed pointer-events-none"
+                ? "hover:border-blue-500 hover:shadow-lg cursor-pointer"
+                : "opacity-60 cursor-not-allowed pointer-events-none"
                 }`}
             >
               <div className="flex flex-col md:flex-row">
-                {/* Screenshot Placeholder */}
-                <div className="md:w-80 h-64 md:h-auto bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-                  {/* Decorative Pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{
-                      backgroundImage: `linear-gradient(45deg, #000 25%, transparent 25%), 
-                                       linear-gradient(-45deg, #000 25%, transparent 25%), 
-                                       linear-gradient(45deg, transparent 75%, #000 75%), 
-                                       linear-gradient(-45deg, transparent 75%, #000 75%)`,
-                      backgroundSize: '20px 20px',
-                      backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-                    }}></div>
-                  </div>
+                {/* Screenshot */}
+                <div className="md:w-80 h-64 md:h-auto rounded-4xl  bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
+                  {checkout.screenshot ? (
+                    <img
+                      src={checkout.screenshot}
+                      alt={checkout.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      {/* Decorative Pattern */}
+                      <div className="absolute inset-0 opacity-10">
+                        <div className="absolute inset-0" style={{
+                          backgroundImage: `linear-gradient(45deg, #000 25%, transparent 25%), 
+                                           linear-gradient(-45deg, #000 25%, transparent 25%), 
+                                           linear-gradient(45deg, transparent 75%, #000 75%), 
+                                           linear-gradient(-45deg, transparent 75%, #000 75%)`,
+                          backgroundSize: '20px 20px',
+                          backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+                        }}></div>
+                      </div>
 
-                  {/* Placeholder Content */}
-                  <div className="relative z-10 text-center">
-                    <svg
-                      className="w-16 h-16 mx-auto mb-3 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                    <p className="text-sm font-medium text-gray-400">Screenshot</p>
-                  </div>
+                      {/* Placeholder Content */}
+                      <div className="relative z-10 text-center">
+                        <svg
+                          className="w-16 h-16 mx-auto mb-3 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                        <p className="text-sm font-medium text-gray-400">Screenshot</p>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Content */}

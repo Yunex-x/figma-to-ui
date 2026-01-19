@@ -47,7 +47,7 @@ export default function Page() {
     };
 
     return (
-        <main className="min-h-screen bg-white relative">
+        <main className="min-h-screen bg-white relative font-[Inter]">
 
             {/* 🔥 FULL PAGE PROCESSING OVERLAY */}
             {step === "processing" && <ProcessingOverlay />}
