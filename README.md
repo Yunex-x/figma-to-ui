@@ -1,137 +1,91 @@
-## 🎨 Figma Design
+# Checkout Forms — UI Portfolio
 
-This UI is based on the following Figma checkout flow design:
+A collection of **pixel-perfect design–to–code UI examples** built with **Next.js + Tailwind CSS** as part of my portfolio to showcase modern frontend skills including:
 
-🔗 https://www.figma.com/design/ioKjI3AvnbfmgjwRCtnBd9/Payment-Checkout-Design--Community-?node-id=72-278&p=f&t=Z1GIsPJeRYR1Uwgs-0
+✨ Checkout flow  
+🔐 Auth flow  
+📊 Dashboard UI
 
-All layout, spacing, and hierarchy decisions follow the original design.
+🎨 These UIs were implemented based on Figma designs and built with a focus on layout fidelity, responsive structure, and reusable component architecture.
 
-Figma Checkout Flow — Design to UI
+🔗 **Live Demo:** https://checkout-forms.vercel.app/ :contentReference[oaicite:0]{index=0}
 
-This project is a pixel-perfect implementation of a checkout payment flow, built by translating a Figma design into a fully structured UI using Next.js and Tailwind CSS.
+---
 
-The goal is to demonstrate a professional design-to-code workflow, focusing on layout accuracy, component architecture, and scalable UI structure — before adding real payment logic.
+## 🚀 Project Overview
 
-✨ Project Goals
+This repository contains **three complete UI examples**:
 
-Convert a Figma checkout design into a real UI
+### 🔹 Checkout Flow
+A responsive checkout form UI with a structured left–right layout on desktop and stacked mobile approach. Includes design fidelity to Figma and clean component split.
 
-Preserve exact spacing, typography, and layout
+### 🔹 Auth Flow
+Pixel-perfect authentication screens including sign-in, sign-up, and password flows designed with Tailwind and Next.js.
 
-Follow best practices in component architecture
+### 🔹 Dashboard
+A dashboard layout that showcases component reusability, navigation, and basic UI states (cards, tables, metrics).
 
-Build a scalable foundation for future logic (payments, APIs, validation)
+---
 
-🧩 What’s Implemented
-Checkout Layout
+## 📦 Tech Stack
 
-Two-column layout (desktop)
+This project uses:
 
-Responsive single-column layout (mobile)
+- 🛠 **Next.js** (App Router)  
+- 🎨 **Tailwind CSS**  
+- ⚛️ **React**  
+- 💡 Fully responsive, mobile-first design  
+- 📐 Designed to scale, easy to extend with real logic
 
-Left: Payment flow
+All UI components strictly follow the original Figma layouts including spacing, typography, and hierarchy. :contentReference[oaicite:1]{index=1}
 
-Right: Order summary
+---
 
-Payment Methods
+## 🎯 Features
 
-Card payment
+✔ Responsive layouts (mobile + desktop)  
+✔ Clean component structure  
+✔ Reusable UI components  
+✔ Pixel-perfect alignment with Figma designs  
+✔ Simple portfolio project to demonstrate UI skills
 
-Bank payment
+---
 
-Bank transfer
+## 🧠 Architecture
 
-Method switching via radio buttons
-
-UI States
-
-Conditional rendering per payment method
-
-Default method selection
-
-Stable layout with no visual shifts
-
-Architecture
-
-Page-level layout separation
-
-Stateless UI components
-
-Clean, maintainable file structure
-
-🗂️ Project Structure
 app/
-└─ checkout/
-   ├─ page.tsx
-   └─ components/
-      ├─ PaymentMethods.tsx
-      ├─ CardFields.tsx
-      ├─ BankFields.tsx
-      ├─ TransferInfo.tsx
-      ├─ PayCTA.tsx
-      └─ OrderSummary.tsx
+├─ checkout/ … checkout pages
+├─ auth/ … sign-in / sign-up / reset
+├─ dashboard/ … dashboard screens
+components/
+├─ ui/ … buttons, inputs, cards
+├─ layout/ … headers, footers, nav
+public/
+├─ images/ … illustration assets
 
 
-Each component has one responsibility, making the UI easy to extend and reason about.
+Each screen is broken down into **stateless UI components** for maintainability and reusability.
 
-🛠️ Tech Stack
+---
 
-Next.js (App Router)
 
-React
 
-Tailwind CSS
+## 📥 Getting Started
 
-TypeScript (optional / recommended)
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/Yunex-x/checkout-forms.git
+Install dependencies
 
-🎨 Design Source
+npm install
+Run locally
 
-Original checkout flow designed in Figma
+npm run dev
+Open in browser: http://localhost:3000
 
-This project focuses on design fidelity, not visual improvisation
 
-Layout, spacing, and hierarchy strictly follow the design
 
-🧠 Workflow Philosophy
 
-This project follows a professional UI development order:
 
-Layout & structure
-
-Component extraction
-
-Conditional rendering
-
-State management
-
-(Future) validation & APIs
-
-This avoids premature complexity and ensures long-term maintainability.
-
-🚀 Future Improvements
-
-Payment submission loading state
-
-Success / confirmation screen
-
-Form validation
-
-API integration (e.g. Stripe)
-
-Accessibility improvements
-
-Animations & micro-interactions
-
-📌 Purpose
-
-This project is ideal as:
-
-A design-to-code portfolio piece
-
-A reference for checkout UI architecture
-
-A foundation for real payment integration
-
-📄 License
-
-This project is for educational and demonstration purposes.
+🙌 Credits
+Designed from Figma UI mockups — implemented with precision and modern frontend practices using Next.js and Tailwind CSS. 
