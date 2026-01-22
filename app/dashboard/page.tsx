@@ -1,4 +1,17 @@
+"use client";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  AreaChart,
+  Area,
+  Line,
+  XAxis,
+  YAxis,
+} from "recharts";
+
 export default function DashboardPage() {
+    
     return (
         <div
             className="
@@ -243,10 +256,70 @@ export default function DashboardPage() {
           top-[207px]
           w-[1615.14px]
           h-[291px]
-          bg-white
         "
-                />
+                >
+                    <div className="flex gap-6 w-full">
+  {/* FIRST CARD */}
+  <div className="relative flex w-[930px] h-[290px] rounded-2xl bg-white shadow-sm px-6 py-6">
+    {/* Text */}
+    <div className="flex flex-col justify-between max-w-[340px]">
+      <div>
+        <p className="text-xs font-bold text-gray-400 mb-1">
+          Built by developers
+        </p>
 
+        <h3 className="text-lg font-bold text-gray-700 mb-2">
+          Purity UI Dashboard
+        </h3>
+
+        <p className="text-sm text-gray-400 leading-relaxed">
+          From colors, cards, typography to complex elements,
+          you will find the full documentation.
+        </p>
+      </div>
+
+      <button className="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:underline">
+        Read more
+        <span>→</span>
+      </button>
+    </div>
+
+    {/* Image placeholder */}
+    <div className="absolute right-6 top-1/2 -translate-y-1/2 w-[360px] h-[255px] rounded-xl bg-teal-400 flex items-center justify-center">
+      <span className="text-white font-bold text-xl">chakra</span>
+    </div>
+  </div>
+
+  {/* SECOND CARD */}
+  <div className="relative w-[660px] h-[290px] rounded-2xl overflow-hidden">
+    {/* Background */}
+    <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700" />
+
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black/30" />
+
+    {/* Text */}
+    <div className="relative z-10 h-full flex flex-col justify-between px-6 py-6">
+      <div>
+        <h3 className="text-lg font-bold text-white mb-2">
+          Work with the Rockets
+        </h3>
+
+        <p className="text-sm text-white/80 leading-relaxed max-w-[390px]">
+          Wealth creation is an evolutionarily recent positive-sum game.
+          It is all about who take the opportunity first.
+        </p>
+      </div>
+
+      <button className="flex items-center gap-1 text-sm font-semibold text-white hover:underline">
+        Read more
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>
                 {/* ================= Analytics Cards (Charts area) ================= */}
                 <div
                     className="
@@ -255,9 +328,120 @@ export default function DashboardPage() {
           top-[522px]
           w-[1615.14px]
           h-[445px]
-          bg-white
         "
-                />
+                >
+                    <div className="flex gap-6 w-full mt-6">
+      {/* 🟦 LEFT CARD — Active Users */}
+      <div className="w-[658px] h-[445px] bg-white rounded-2xl shadow-sm p-6 flex flex-col justify-between">
+        {/* Graph */}
+        <div className="w-full h-[220px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { name: "Jan", v: 300 },
+                { name: "Feb", v: 250 },
+                { name: "Mar", v: 200 },
+                { name: "Apr", v: 350 },
+                { name: "May", v: 400 },
+                { name: "Jun", v: 380 },
+                { name: "Jul", v: 450 },
+                { name: "Aug", v: 420 },
+                { name: "Sep", v: 300 },
+              ]}
+            >
+              <YAxis hide />
+              <XAxis hide />
+              <Bar dataKey="v" radius={6} fill="#1A202C" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Title */}
+        <div>
+          <h3 className="text-lg font-bold text-gray-700">
+            Active Users
+          </h3>
+          <p className="text-sm font-bold text-green-400">
+            (+23) than last week
+          </p>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-4 gap-4 mt-4">
+          {[
+            { label: "Users", value: "32,984" },
+            { label: "Clicks", value: "2.42m" },
+            { label: "Sales", value: "$2,400" },
+            { label: "Items", value: "320" },
+          ].map((item) => (
+            <div key={item.label}>
+              <p className="text-sm text-gray-400">{item.label}</p>
+              <p className="text-lg font-bold text-gray-700">
+                {item.value}
+              </p>
+              <div className="h-[2px] bg-teal-400 mt-2 w-full" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 🟩 RIGHT CARD — Sales Overview */}
+      <div className="w-[933px] h-[445px] bg-white rounded-2xl shadow-sm p-6">
+        {/* Header */}
+        <div className="mb-4">
+          <h3 className="text-lg font-bold text-gray-700">
+            Sales overview
+          </h3>
+          <p className="text-sm font-bold text-green-400">
+            (+5) more in 2021
+          </p>
+        </div>
+
+        {/* Graph */}
+        <div className="w-full h-[300px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart
+              data={[
+                { m: "Jan", a: 200, b: 300 },
+                { m: "Feb", a: 150, b: 280 },
+                { m: "Mar", a: 220, b: 350 },
+                { m: "Apr", a: 180, b: 320 },
+                { m: "May", a: 250, b: 400 },
+                { m: "Jun", a: 230, b: 380 },
+                { m: "Jul", a: 190, b: 340 },
+                { m: "Aug", a: 210, b: 360 },
+                { m: "Sep", a: 170, b: 300 },
+              ]}
+            >
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#81E6D9" stopOpacity={0.5} />
+                  <stop offset="100%" stopColor="#81E6D9" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+
+              <XAxis dataKey="m" stroke="#CBD5E0" />
+              <YAxis stroke="#CBD5E0" />
+
+              <Area
+                type="monotone"
+                dataKey="b"
+                stroke="#38B2AC"
+                fill="url(#g1)"
+              />
+
+              <Line
+                type="monotone"
+                dataKey="a"
+                stroke="#2D3748"
+                strokeWidth={2}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </div>
+                    </div>
 
                 {/* ================= Content Cards ================= */}
                 <div
@@ -267,21 +451,193 @@ export default function DashboardPage() {
           top-[991px]
           w-[1615.14px]
           h-[519px]
-          bg-white
         "
+                >
+                    <div className="flex gap-6 w-full mt-6">
+      {/* 🟦 LEFT CARD — Projects */}
+      <div className="w-[1067px] h-[519px] bg-white rounded-2xl shadow-sm p-6 flex flex-col">
+        {/* Header */}
+        <div className="flex justify-between items-start mb-4">
+          <div>
+            <h3 className="text-lg font-bold text-gray-700">Projects</h3>
+            <p className="text-sm text-gray-400 flex items-center gap-1">
+              <span className="text-green-400 font-bold">●</span>
+              30 done this month
+            </p>
+          </div>
+          <span className="text-gray-400">⋮</span>
+        </div>
+
+        {/* Table Header */}
+        <div className="grid grid-cols-[2fr_1fr_1fr_1fr] text-xs text-gray-400 font-bold border-b pb-2">
+          <span>COMPANIES</span>
+          <span>MEMBERS</span>
+          <span>BUDGET</span>
+          <span>COMPLETION</span>
+        </div>
+
+        {/* Rows */}
+        {[
+          {
+            name: "Chakra Soft UI Version",
+            budget: "$14,000",
+            progress: 60,
+          },
+          {
+            name: "Add Progress Track",
+            budget: "$3,000",
+            progress: 10,
+          },
+          {
+            name: "Fix Platform Errors",
+            budget: "Not set",
+            progress: 100,
+          },
+          {
+            name: "Launch our Mobile App",
+            budget: "$32,000",
+            progress: 100,
+          },
+          {
+            name: "Add the New Pricing Page",
+            budget: "$400",
+            progress: 25,
+          },
+          {
+            name: "Redesign New Online Shop",
+            budget: "$7,600",
+            progress: 40,
+          },
+        ].map((item) => (
+          <div
+            key={item.name}
+            className="grid grid-cols-[2fr_1fr_1fr_1fr] items-center py-4 border-b last:border-b-0"
+          >
+            <span className="text-sm font-bold text-gray-700">
+              {item.name}
+            </span>
+
+            {/* Members (placeholder avatars) */}
+            <div className="flex -space-x-2">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="w-6 h-6 rounded-full bg-gray-300 border-2 border-white"
                 />
+              ))}
+            </div>
+
+            <span className="text-sm font-bold text-gray-700">
+              {item.budget}
+            </span>
+
+            {/* Progress */}
+            <div>
+              <span className="text-sm font-bold text-teal-400">
+                {item.progress}%
+              </span>
+              <div className="h-[4px] bg-gray-200 rounded mt-1">
+                <div
+                  className="h-full bg-teal-400 rounded"
+                  style={{ width: `${item.progress}%` }}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* 🟩 RIGHT CARD — Orders Overview */}
+      <div className="w-[524px] h-[519px] bg-white rounded-2xl shadow-sm p-6 flex flex-col">
+        {/* Header */}
+        <div className="mb-6">
+          <h3 className="text-lg font-bold text-gray-700">
+            Orders overview
+          </h3>
+          <p className="text-sm font-bold text-green-400">
+            +30% this month
+          </p>
+        </div>
+
+        {/* Timeline */}
+        <div className="flex flex-col gap-6">
+          {[
+            {
+              title: "$2400, Design changes",
+              date: "22 DEC 7:20 PM",
+            },
+            {
+              title: "New order #4219423",
+              date: "21 DEC 11:21 PM",
+            },
+            {
+              title: "Server Payments for April",
+              date: "21 DEC 9:28 PM",
+            },
+            {
+              title: "New card added for order #3210145",
+              date: "20 DEC 3:52 PM",
+            },
+            {
+              title: "Unlock packages for Development",
+              date: "19 DEC 11:35 PM",
+            },
+            {
+              title: "New order #9851258",
+              date: "18 DEC 4:41 PM",
+            },
+          ].map((item) => (
+            <div key={item.title} className="flex gap-4">
+              <div className="w-4 h-4 rounded-full bg-teal-400 mt-1" />
+              <div>
+                <p className="text-sm font-bold text-gray-700">
+                  {item.title}
+                </p>
+                <p className="text-xs text-gray-400">{item.date}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+                    </div>
 
                 {/* ================= Footer Menu ================= */}
                 <div
                     className="
           absolute
           left-[291.65px]
-          top-[1538.5px]
+          top-[1525.5px]
           w-[1615.14px]
           h-[18px]
-          bg-transparent
         "
-                />
+                >
+    <footer className="w-full mt-8 flex items-center justify-between text-sm text-gray-400">
+      {/* Left */}
+      <p>
+        © 2021, Made with ❤️ by{" "}
+        <span className="font-medium">Creative Tim</span> &{" "}
+        <span className="font-medium">Simmmple</span> for a better web
+      </p>
+
+      {/* Right */}
+      <div className="flex gap-6">
+        <a href="#" className="hover:text-gray-600 transition">
+          Creative Tim
+        </a>
+        <a href="#" className="hover:text-gray-600 transition">
+          Simmmple
+        </a>
+        <a href="#" className="hover:text-gray-600 transition">
+          Blog
+        </a>
+        <a href="#" className="hover:text-gray-600 transition">
+          License
+        </a>
+      </div>
+    </footer>
+ 
+                    </div>
             </div>
         </div>
     );
