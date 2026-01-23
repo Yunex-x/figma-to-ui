@@ -35,7 +35,7 @@ export default function HomePage() {
       description: "Analytics and admin dashboard with data visualization and modern UI components",
       route: "/dashboard",
       figmaLink: "https://www.figma.com/design/FaNKkse8sWDm7MQzPoC97t/Purity-UI-Dashboard---Chakra-UI-Dashboard--Community-?node-id=2-31&t=xpBVcXmlXYWEutBw-0",
-      status: "coming-soon",
+      status: "live",
       screenshot: "/dashboard.svg",
       tags: ["Analytics", "Admin", "Data Visualization"],
       color: "from-emerald-500 to-teal-600",
