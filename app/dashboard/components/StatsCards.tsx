@@ -10,7 +10,7 @@ const stats = [
 
 export default function StatsCards() {
   return (
-    <div className="grid grid-cols-4 gap-[24px]">
+    <div className="grid grid-cols-4 gap-[24px] mt-20">
       {stats.map((stat, index) => (
         <div 
           key={index} 

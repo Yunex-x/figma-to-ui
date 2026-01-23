@@ -1,19 +1,19 @@
 'use client';
 
-import ChartsSection from "./ChartsSection";
-import FeatureCards from "./FeatureCards";
-import Footer from "./Footer";
-import Header from "./Header";
-import ProjectsSection from "./ProjectsSection";
-import Sidebar from "./Sidebar";
-import StatsCards from "./StatsCards";
+import ChartsSection from "./components/ChartsSection";
+import FeatureCards from "./components/FeatureCards";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ProjectsSection from "./components/ProjectsSection";
+import Sidebar from "./components/Sidebar";
+import StatsCards from "./components/StatsCards";
 
 
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FA] flex">
       <Sidebar />
-      <main className="flex-1 overflow-x-hidden">
+      <main className="ml-[282px]  flex-1 overflow-x-hidden">
         <Header />
         <div className="px-[31.65px] py-[24px] space-y-[24px]">
           <StatsCards />
