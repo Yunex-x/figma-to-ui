@@ -198,7 +198,7 @@ export default function LoginPage() {
 
             {/* FORGOT */}
             <Link
-              href="/auth/forgot"
+              href="/auth/forgotpassword"
               className="text-center text-[14px] text-[#1B85F3] mb-[32px] lg:mb-[42px]"
             >
               Forget password?
